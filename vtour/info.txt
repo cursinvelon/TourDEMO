@@ -1,0 +1,98 @@
+﻿Spartacus-dark ver 2.3.1
+
+Download templates for free:
+
+http://www.krpanostore.com/download.html
+
+
+Icons repository:
+http://fontawesome.io/icons/
+
+You have change each default setting from list below. Write you new settings in the settings.xml file.
+	ver 2.3.1
+	* on mobile the global audio button not working well with livepano elements 
+
+	ver 2.3.0
+	* you can add now a separete Audio to the text POI
+
+	ver 2.2.1
+	* FIX POI to pano in a mobile ver (floating poi mode only)
+
+	ver 2.2.0
+	* hotspot_poi_topano_mainstyle 		NEW animated POI to panorama possibility 
+		In this place you can set a new style for POI to the next panorama. The sample styles are in this location:
+		skin/templates/mainstyles/poi_topano_mainstyle.xml	
+		You can add you own style freely.	
+		Not all properties can be overwritten eg: scale, onclick, onhover, onover, onout and for mobile devices - ondown, onup
+		
+		You can add you own new style for a hotspot 'normal' is a default. 
+		This work only if 'Floating POI style' is disabled.
+	* rebuild all POI system - stability and performance improvement
+	* rebuild arrow floating POI to panorama
+	* poi_to_pano_style					popup to new scene style (normal or circle) - 'normal' is default
+	* poi_size:							NUMBER - POI size - use one or two walue separated '|' eg: poi_size="45" (POI width and POI height = 45) or poi_size="45|65" (POI width=45 and POI height=65)
+	* poi_css_size:						NUMBER - POI font size 
+	* poi_roundedge:					NUMBER - roundedge POI (exept POI to new scene)
+	* poi_panorama_roundedge:			NUMBER - roundedge POI to new scene
+	* poi_flip_color:					BOOL - POI font color and POI background color switcher
+	* poi_panorama_color:				scene POI background color
+	* poi_panorama_ico:					scene POI icon
+	* poi_info_color:					info POI background color
+	* poi_info_ico:						info POI icon
+	* poi_photo_color:					photo POI background color
+	* poi_photo_ico:					photo POI icon
+	* poi_audio_color:					play audio POI background color
+	* poi_audio_ico:					play audio POI icon
+	* poi_popup_color:					www popup POI background color
+	* poi_popup_ico:					www popup POI icon
+	* poi_youtube_color:				youtube video POI background color
+	* poi_youtube_ico:					youtube video POI icon
+	* default_map_width					window width for map/floorplans/info box
+	* default_map_height				window height for map/floorplans/info box
+	* vr_poi_png_name					name POI graphic 
+    * vr_txt_width						NUMBER - max width for txt POI in VR mode
+    * vr_txt_bgroundedge				NUMBER - bgroundedge for txt POI in VR mode
+    * vr_txt_bgshadow					bgshadow for txt POI in VR mode
+    * vr_txt_oversampling				oversampling for txt POI in VR mode
+    * vr_photo_width					NUMBER - max width for photo POI in VR mode
+	* hotspot_poi_topano_mainstyle		popup to next scene style (normal/circle)
+	
+ 
+    * top_z_color:						GUI first color
+    * bottom_z_color:					GUI second color
+    * change_lang_bg_color:				GUI thrid color (popup background)
+    * audio2d_volume:					NUMBER - main value of the lector audio
+	* audio2d_loop: 					BOOL - loop lector audio
+	* thumb_size_in_pixel:				NUMBER - thumb size
+    * poi_hide_popup_to_pano_vt:		BOOL - show/hide popup to panorama in the VR mode
+	* poi_hide_popup_to_pano_normal:	BOOL - show/hide popup to panorama in the normal mode
+    * poi_txt_maxwidth:					NUMBER - max width for the info POI (for desktop and tablet)
+	* poi_txt_maxheight:				NUMBER - max height for the info POI (for desktop and tablet)
+    * font_family_global:				global font family name (this font is set in the index.html file - head section)
+	* fullscreen_btn:					fullscreen icon
+    * snapshot_btn:						snapshot icon
+    * vr_btn:							VRmode icon
+    * mapa_btn:							Googlemaps icon
+    * share_btn:						share icon
+    * info_btn:							info icon
+    * floorplan_btn:					floorplan icon
+	* fp_marker_size:					NUMBER - size of the floorplans marker (px)
+	* fp_marker_active_color:			a color for active marker
+	* fp_marker_normal_bgborder:		a bgborder color for no active marker
+	* fp_marker_active_bgborder:		a bgborder color for active marker
+	* radar_dragable:					BOOL - set 'true' if you want dragable radar 
+	* radar_size:						NUMBER (in the pixels)
+	* radar_zoomwithmap:				BOOL (true/false)
+	* radar_alpha:						NUMBER (0-1)
+	* radar_fillcolor:					default 'structure.primary_color'
+	* radar_fillalpha:					NUMBER (0-1) default - 1
+	* radar_linewidth:					NUMBER (0-1) default - 1
+	* radar_linecolor:					default 'structure.poi_color'
+	* radar_linealpha:					NUMBER (0-1) default - 0.5
+	* hide_panolist_onstart: 			BOOL - open or hide index of panoramas onstart 
+    * gyro_btn:							gyro icon
+	* vrmenu_php_only:					BOOL - if true then VRmenu works with PHP; if false then VRmenu works with Krpano (1.9pr10 min)
+	* map_zoom: 						'auto' - shows all map markers/ZOOM NUMBER 
+	* map_new_styles_list:				!!! New map styles - night_mode|dark_mode|blue_mode|silver_mode|light_mode|retro_mode -> you can use all or single
+	* map_new_styles_names:				Night|Dark|Blue|Silver|Light|Retro -> use you own names for a new map styles (set a new names or set FALSE)
+	* map_activestyle:					rum a map with the new map style (set the new style or set FALSE)

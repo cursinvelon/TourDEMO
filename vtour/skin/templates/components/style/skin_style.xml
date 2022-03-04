@@ -1,0 +1,64 @@
+<krpano>
+
+	<textstyle name="DEFAULT"
+              origin="cursor"
+              edge="bottom"
+              xoffset="0"
+              yoffset="-3"
+              fadeintime="0.1"
+              showtime="0.1"
+              fadetime="0.0"
+              font="get:butterfly_settings.font_family_global"
+              fontsize="16.0"
+              bold="true"
+              italic="false"
+              textcolor="0x222222"
+              textalign="center"
+              padding="6 10 6 10"
+              css=""
+              background="true"
+              backgroundcolor="0xffffff"
+              backgroundalpha="1.0"
+              border="false"
+              bordercolor="0xffffff"
+              borderalpha="1.0"
+              borderwidth="1.0"
+              roundedge="3"
+              shadow="0.9"
+              shadowrange="4.0"
+              shadowangle="45"
+              shadowcolor="0x000000"
+              shadowalpha="0.5"
+              textshadow="0.0"
+              textshadowrange="2.0"
+              textshadowangle="90"
+              textshadowcolor="0x000000"
+              textshadowalpha="1.0"
+              embeddedfonts="false"
+              alpha="1.0"
+              noclip="true"
+              parent="STAGE"
+	           />
+
+<!-- styl trujkąta pod dymkiem info poi -->
+  <style name="arrow_css" css="color:#ffffff; text-align:center; font-size:29px;"/>
+  <style name="zamknij_css" css="color:#000000; text-align:center; font-size:21px;"/>
+  <style name="hsico_css" devices="!mobile" css="color:#ffffff; text-align:center; font-size:14px;"/>
+	<style name="hsico_css" devices="mobile" css="color:#ffffff; text-align:center; font-size:10px;"/>
+
+<!-- styl do tytulów zdjęć -->
+  <menu_txt_css_title value="color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:18px;" />
+
+	<data name="text_css">
+      h1 {color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:31px; }
+      h2 {color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:28px; }
+      h3 {color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:26px; }
+      h4 {color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:24px; }
+      h5 {color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:18px; }
+      h6 {color:#000000; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:15px; }
+      p {color:#222222; font-family: Roboto Condensed, sans-serif; font-weight:normal; text-align:left; font-size:15px; }
+      span {color:#bbbbbb; font-family: Courier, sans-serif; font-weight:normal; text-align:left; font-size:15px;}
+  </data>
+
+
+</krpano>

@@ -1,0 +1,251 @@
+<krpano>
+
+
+  <events name="laduj_dodane_juz_hs" keep="true" onnewscene="check_dodane_hotspoty_livepano(get(scene[get(xml.scene)].name))" />
+
+    <!-- style do hotspota dystorsyjnego renderer="css3d" -->
+  <style name="hs_dist_style" distorted="true" preferredformat.chrome="webm" preferredformat.firefox="webm" autopause="false" loop="false" depth="off" zorder="-1" zorder2="1" keep="false" backup_rx="0" backup_ry="0" backup_rz="0" backup_scale="0"  backup_zorder="1"/>
+
+
+  <!-- łąduję zrobione już livepano -->
+    <action name="check_dodane_hotspoty_livepano" protect="true">
+      for(set(i,0),i LT livepano.inscene[get(scene[get(xml.scene)].name)].hs.count,inc(i),
+        <!-- trace('%1 Ilosć ho juz dodana to: ',get(livepano.inscene[get(scene[get(xml.scene)].name)].hs.count)); -->
+        newscene_load_hs(get(scene[get(xml.scene)].name),get(livepano.inscene[get(scene[get(xml.scene)].name)].hs[get(i)].name));
+      );
+    </action>
+
+
+    <action name="newscene_load_hs" protect="true">
+
+      <!-- trace('NEW: %1 : %2 : ',get(livepano.inscene[%1].hs[%2].src)); -->
+      fhotspot(%2, hs_dist_style);
+      if(livepano.inscene[%1].hs[%2].typek == 'photo',
+        calc(h.url, '%FIRSTXML%/media/'+livepano.inscene[%1].hs[%2].src);
+        if(!livepano.inscene[%1].hs[%2].flying, set(h.enabled, false));
+        copy(h.ath, livepano.inscene[%1].hs[%2].ath);
+        copy(h.atv, livepano.inscene[%1].hs[%2].atv);
+        copy(h.typek, livepano.inscene[%1].hs[%2].typek);
+        copy(h.adw, livepano.inscene[%1].hs[%2].adw);
+      ,
+        set(h.url, %FIRSTXML%/plugins/videoplayer.js);
+        calc(h.videourl, 'media/'+livepano.inscene[%1].hs[%2].video_name+'.mp4|media/'+livepano.inscene[%1].hs[%2].video_name+'.webm');
+        calc(h.posterurl, '%FIRSTXML%/media/'+livepano.inscene[%1].hs[%2].src);
+        copy(h.ath, livepano.inscene[%1].hs[%2].ath);
+        copy(h.atv, livepano.inscene[%1].hs[%2].atv);
+        copy(h.typek, livepano.inscene[%1].hs[%2].typek);
+        copy(h.rangehs, livepano.inscene[%1].hs[%2].range);
+        copy(h.volumehs, livepano.inscene[%1].hs[%2].volume);
+        copy(h.video_namehs, livepano.inscene[%1].hs[%2].video_name);
+        copy(h.adw, livepano.inscene[%1].hs[%2].adw);
+        set(h.nazwa_audio, livepano_audio3d_%2);
+        <!-- if(livepano.inscene[%1].hs[%2].pause_on_click, set(h.enabled, false)); -->
+        set(_nazwa_audio_var, livepano_audio3d_%2);
+        if(livepano.inscene[%1].hs[%2].autoplay,
+          set(h.pausedonstart, false);
+          set(h.enabled, false);
+          set(h.audio3dnastartpause, true);
+        ,
+          set(h.pausedonstart, true);
+        );
+        copy(h.volume, livepano.inscene[%1].hs[%2].volume);
+        if(livepano.inscene[%1].hs[%2].sound3d,
+          set(h.volume, 0);
+        );
+        if(livepano.inscene[%1].hs[%2].autoplay,
+          set(h.indywidualny_volume, true);
+        ,
+          set(h.indywidualny_volume, false);
+        );
+        set(h.onvideoready,
+          if(livepano.inscene[%1].hs[%2].sound3d AND nazwa_audio !== null,
+            <!-- trace('nazwa audio: ',get(nazwa_audio),' :vvvol: ',calc(volumehs*indywidualny_volume)); -->
+            playHtml5sound3D(false, get(nazwa_audio), calc('media/'+livepano.inscene[%1].hs[%2].video_name), get(ath), get(atv), get(rangehs), 1.0, get(volumehs), true);
+            if(livepano.inscene[%1].hs[%2].autoplay,
+              Html5Soundmute(get(nazwa_audio),false);
+            ,
+              Html5Soundmute(get(nazwa_audio),true);
+            )
+          );
+        );
+
+        set(h.onvideocomplete,
+          <!-- trace('video %2 zakończone'); -->
+          if(livepano.inscene[%1].hs[%2].loop,
+            play();
+            Html5SoundSetSeek(get(nazwa_audio),0);
+            Html5Soundmute(get(nazwa_audio),false);
+          ,
+            Html5SoundSetSeek(get(nazwa_audio),0);
+            Html5Soundmute(get(nazwa_audio),true);
+            set(enabled, true);
+          );
+        );
+
+        set(h.onerror, clearinterval(seek_%2_time);showerror('SOME ERROR WITH VIDEO'););
+      );
+
+      <!-- dalsze parametry po IF -->
+      if(!h.adw,
+        copy(h.scale, livepano.inscene[%1].hs[%2].scale);
+        copy(h.width, livepano.inscene[%1].hs[%2].width);
+        copy(h.height, livepano.inscene[%1].hs[%2].height);
+        copy(h.rx, livepano.inscene[%1].hs[%2].rx);
+        copy(h.ry, livepano.inscene[%1].hs[%2].ry);
+        copy(h.rz, livepano.inscene[%1].hs[%2].rz);
+      );
+      <!-- if(livepano.inscene[%1].hs[%2].typek == 'photo', set(h.enabled, false)); -->
+      if(livepano.inscene[%1].hs[%2].flying AND livepano.inscene[%1].hs[%2].typek == 'photo',
+        set(h.flystate, 0);
+        set(h.enabled, true);
+      );
+      set(h.onloaded,
+      <!-- temp do potrzrby resetowania -->
+        if(adw,
+          copy(_hfov, livepano.inscene[get(scene[get(xml.scene)].name)].hs[get(name)].hfov);
+          copy(_yaw, livepano.inscene[get(scene[get(xml.scene)].name)].hs[get(name)].yaw);
+          copy(_pitch, livepano.inscene[get(scene[get(xml.scene)].name)].hs[get(name)].pitch);
+          copy(_roll, livepano.inscene[get(scene[get(xml.scene)].name)].hs[get(name)].roll);
+
+          <!-- trace('NEWPANO: _hfov: ',get(_hfov),' _yaw: ',get(_yaw),' _pitch: ',get(_pitch),' _roll: ',get(_roll)); -->
+          calc(ustaw_z_adw_settings_live, 'calc_pos_from_hfov_yaw_pitch_roll('+_hfov+','+_yaw+','+_pitch+','+_roll+');');
+          ustaw_z_adw_settings_live();
+        );
+      );
+
+      set(h.onclick,
+        if(!webvr.isenabled,
+          if(livepano.inscene[%1].hs[%2].typek == 'photo',
+            if(flystate == 0,
+              flyout_by_name(get(name))
+            ,
+              flyback_by_name(get(name))
+            );
+          );
+
+          if(livepano.inscene[%1].hs[%2].typek == 'video',
+            <!-- togglepause();
+            if(!pierwszyklikhsaulp,
+              playHtml5sound3D(false, get(nazwa_audio), calc('media/'+livepano.inscene[%1].hs[%2].video_name), get(ath), get(atv), get(rangehs), 1.0, get(volumehs), true);
+              set(pierwszyklikhsaulp, true)
+            );-->
+
+            if(ispaused,
+              play();
+              Html5SoundSetSeek(get(nazwa_audio),get(time));
+              Html5Soundmute(get(nazwa_audio),false);
+            ,
+              pause();
+              Html5Soundmute(get(nazwa_audio),true);
+            );
+          );
+        );
+      );
+    </action>
+
+<!-- playHtml5sound3D(keep, name, audiofile, ath, atv, range, rate*, volume*, loops*, onload*, onplay*, onpause*, onstop*, onmute*, oncomplete*) -->
+
+    <action name="flyout_by_name" protect="true">
+    		<!-- make all other hotspots flying back -->
+    		flyback_others();
+
+    		<!--
+    			for best control set 4 fly states:
+    			0 = normal
+    			1 = while flying out
+    			2 = out
+    			3 = while flying back
+    		-->
+
+    		<!-- save original position/rotation -->
+    		if(hotspot[%1].flystate == 0,
+  		    copy(hotspot[%1].backup_rx,     hotspot[%1].rx);
+  		    copy(hotspot[%1].backup_ry,     hotspot[%1].ry);
+  		    copy(hotspot[%1].backup_rz,     hotspot[%1].rz);
+  		    copy(hotspot[%1].backup_scale,  hotspot[%1].scale);
+  		    copy(hotspot[%1].backup_zorder, hotspot[%1].zorder);
+  		  );
+
+    		<!-- set new state -->
+    		set(hotspot[%1].flystate,1);
+    		set(hotspot[%1].zorder,99);
+
+    		<!-- tween the rotations values to 0 for a flat screen view -->
+    		tween(hotspot[%1].rx, 0);
+    		tween(hotspot[%1].ry, 0);
+    		tween(hotspot[%1].rz, 0);
+        if(device.mobile,
+          tween(hotspot[%1].scale, 1.0);
+        ,
+          tween(hotspot[%1].scale, 1.5);
+        );
+
+        for(set(i,0),i LT hotspot.count,inc(i),
+          if(hotspot[get(i)].tag == 'pano_poi_tag',
+            set(hotspot[get(i)].visible, false);
+          );
+        );
+    		<!--
+    			tween 'flying' to 1.0,
+    			this makes the hotspot independent from the panorama rotation and scaling
+    		-->
+    		tween(hotspot[%1].flying, 1.0, 0.5, default, set(hotspot[%1].flystate,2); );
+    	</action>
+
+
+    	<action name="flyback_by_name" protect="true">
+    		if(hotspot[%1].flystate != 3,
+    			set(hotspot[%1].flystate,3);
+
+    			<!-- tween back to the stored backup values -->
+    			tween(hotspot[%1].rx,    get(hotspot[%1].backup_rx)    );
+    			tween(hotspot[%1].ry,    get(hotspot[%1].backup_ry)    );
+    			tween(hotspot[%1].rz,    get(hotspot[%1].backup_rz)    );
+    			tween(hotspot[%1].scale, get(hotspot[%1].backup_scale) );
+
+    			copy(hotspot[%1].zorder, hotspot[%1].backup_zorder);
+
+    			<!-- tween 'flying' also back to 0.0 -->
+    			tween(hotspot[%1].flying, 0.0, 0.5, default, set(hotspot[%1].flystate,0); );
+
+          delayedcall(1,
+            for(set(i,0),i LT hotspot.count,inc(i),
+              if(hotspot[get(i)].tag == 'pano_poi_tag',
+                set(hotspot[get(i)].visible, true);
+              );
+            );
+          )
+    		);
+    	</action>
+
+
+    	<action name="flyback_others" protect="true">
+    		for(set(i,0), i LT hotspot.count, inc(i),
+    			if(hotspot[%i].flystate GT 0, flyback_by_name(get(hotspot[get(i)].name)); );
+    		);
+    	</action>
+
+    <action name="calc_pos_from_hfov_yaw_pitch_roll" protect="true">
+      div(hfov,%1,57.295779);
+      div(yaw,%2,-57.295779);
+      div(pitch,%3,57.295779);
+      div(roll,%4,-57.295779);
+      mul(hfov,0.5);Math.tan(hfov);mul(width,hfov,1000);set(height,'prop');
+      Math.cos(ch,yaw);Math.sin(sh,yaw);
+      Math.cos(ca,pitch);Math.sin(sa,pitch);
+      Math.cos(cb,roll);Math.sin(sb,roll);
+      mul(m0,ca,ch);
+      mul(tmp,cb,sa);mul(tmp,ch);mul(tmp2,sb,sh);add(m3,tmp,tmp2);
+      mul(m4,cb,ca);
+      mul(tmp,cb,sa);mul(tmp,sh);mul(tmp2,sb,ch);sub(m5n,tmp,tmp2);mul(m5n,-1);
+      mul(tmp,sb,sa);mul(tmp,ch);mul(tmp2,cb,sh);sub(m6n,tmp,tmp2);mul(m6n,-1);
+      Math.atan2(yaw,m6n,m0);
+      Math.atan2(roll,m5n,m4);
+      Math.asin(pitch,m3);
+      mul(ath,yaw,57.295779);
+      mul(atv,pitch,57.295779);
+      mul(rotate,roll,57.295779);
+    </action>
+
+
+</krpano>

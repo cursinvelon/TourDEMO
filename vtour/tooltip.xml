@@ -1,0 +1,44 @@
+<krpano prevonly="true">
+
+  <include url="tour.xml" />
+  <style name="skin_hotspotstyle"/>
+
+  <action name="startup" autorun="onstart">
+    if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+    loadscene(get(startscene), null, MERGE);
+    if(startactions !== null, startactions() );
+  </action>
+
+
+	<action name="autorotate_oooon" autorun="preinit">
+		delayedcall(0,
+			set(view.fisheye, 1);
+			set(view.stereographic, true);
+			set(view.fov, 155);
+			set(view.fovtype, VFOV);
+			set(view.fovmax, 150);
+			set(view.hlookat, 0);
+			set(view.vlookat, 90);
+			set(view.architectural, 0);
+		);
+	</action>
+
+    <!--<events onloadcomplete="set(autorotate.enabled, true)" />-->
+	<events onxmlcomplete="delayedcall(0.2, normalview();)" />
+
+	<action name="normalview">
+		tween(view.hlookat, 0, 1.0, easeInOutQuad);
+		tween(view.vlookat, 0, 1.0, easeInOutQuad);
+		tween(view.fov,     100,  1.0, easeInOutQuad);
+		tween(view.fisheye, 0.0, 1.0, easeInOutQuad);
+		set(view.fovmax, 180);
+		tween(view.pannini, 1.0, distance(2.0,0.8));
+
+		delayedcall(2,
+			tween(view.hlookat, 10000000, distance(100,10));
+			tween(view.vlookat, 0, 5);
+		);
+	</action>
+
+
+</krpano>

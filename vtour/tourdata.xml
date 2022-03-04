@@ -1,0 +1,53 @@
+<krpano>
+                          
+	<structure lang="es" es="Ins Pompeu Fabra"  primary_color="0x2f9ff4" poi_color="0xff006f">
+		<cat name="cat_0" es="Entrada" >
+			<pano name="cat_0_scene_img_20220301_113549_00_merged" sceneid="scene_img_20220301_113549_00_merged" start_view="21.11, -16.73, 113.62">
+				<poi name="panorama_64_7055" typ="panorama" ath="79.01838" atv="1.46872" src="cat_1|scene_img_20220301_113657_00_merged" rotate="0" scale="1"/>
+			</pano>
+		</cat>
+		<cat name="cat_1" es="Calle" >
+			<pano name="cat_1_scene_img_20220301_113657_00_merged" sceneid="scene_img_20220301_113657_00_merged" start_view="-16.89, -4.53, 100">
+				<poi name="panorama_70_2340" typ="panorama" ath="-51.33239" atv="4.99502" src="cat_0|scene_img_20220301_113549_00_merged" rotate="0" scale="1"/>
+				<poi name="panorama_75_3854" typ="panorama" ath="164.38347" atv="10.15988" src="cat_1|scene_img_20220301_113755_00_merged" rotate="0" scale="1"/>
+			</pano>
+			<pano name="cat_1_scene_img_20220301_113755_00_merged" sceneid="scene_img_20220301_113755_00_merged" start_view="-65.45, -19.62, 109.18">
+				<poi name="panorama_80_3778" typ="panorama" ath="-95.72306" atv="8.34475" src="cat_1|scene_img_20220301_113657_00_merged" rotate="0" scale="1"/>
+				<poi name="panorama_84_9138" typ="panorama" ath="172.80841" atv="-1.00707" src="cat_2|scene_img_20220301_114002_00_merged" rotate="0" scale="1"/>
+			</pano>
+		</cat>
+		<cat name="cat_2" es="Rotonda" >
+			<pano name="cat_2_scene_img_20220301_114002_00_merged" sceneid="scene_img_20220301_114002_00_merged" start_view="39.84, -11.97, 109.18">
+				<poi name="panorama_90_3536" typ="panorama" ath="-24.04900" atv="2.33227" src="cat_0|scene_img_20220301_113549_00_merged" rotate="0" scale="1"/>
+				<poi name="panorama_94_5536" typ="panorama" ath="37.47742" atv="5.30151" src="cat_1|scene_img_20220301_113657_00_merged" rotate="0" scale="1"/>
+				<poi name="panorama_100_4976" typ="panorama" ath="97.88654" atv="5.14273" src="cat_1|scene_img_20220301_113755_00_merged" rotate="0" scale="1"/>
+				<poi name="photo_6_5439" typ="photo" ath="-3.45157" atv="-2.22023" src="logo.png" />
+			</pano>
+		</cat>
+	</structure>
+
+                                 
+	<pano name="scene_img_20220301_113549_00_merged" lat="false" lng="false" es="Entrada Invelon"  north="false" audio2d_es="false" />
+	<pano name="scene_img_20220301_113657_00_merged" lat="false" lng="false" es="undefined IMG_20220301_113657_00_merged es"  north="false" audio2d_es="false" />
+	<pano name="scene_img_20220301_113755_00_merged" lat="false" lng="false" es="undefined IMG_20220301_113755_00_merged es"  north="false" audio2d_es="false" />
+	<pano name="scene_img_20220301_113811_00_merged" lat="false" lng="false" es="undefined IMG_20220301_113811_00_merged es"  north="false" audio2d_es="false" />
+	<pano name="scene_img_20220301_114002_00_merged" lat="false" lng="false" es="undefined IMG_20220301_114002_00_merged es"  north="false" audio2d_es="false" />
+
+
+	<global_modules>
+		<modules name="m_facebook" aktyw="false" id="facebook ID" />
+		<modules name="m_analitycs" aktyw="false" />
+		<modules name="m_map" aktyw="false" maptype="normal" distance="kilometers" id="null" />
+		<modules name="m_logo" aktyw="false" id="Logo name tooltip" www="" />
+		<modules name="m_copyright" aktyw="false" id="company name" www="" />
+		<modules name="m_social" aktyw="true"  />
+		<modules name="m_vrmenu" aktyw="true"  />
+		<modules name="m_stickers" aktyw="false" groups="null" />
+		<modules name="m_infobox" aktyw="false"  />
+		<modules name="m_keepview" aktyw="false"  />
+		<modules name="m_arrowmode" aktyw="false" />
+		<modules name="m_radarmode" aktyw="false" />
+		<modules name="m_floorplans" aktyw="false" />
+	</global_modules>
+
+</krpano>

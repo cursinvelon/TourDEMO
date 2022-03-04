@@ -1,0 +1,130 @@
+<krpano>
+    <!-- 
+    ver 2.3.1
+
+    In this place you can set a new style for POI to the next panorama. The sample styles are in this location:
+    skin/templates/mainstyles/poi_topano_mainstyle.xml
+    You can add you own style freely.
+    Not all properties can be overwritten eg: scale, onclick, onhover, onover, onout and for mobile devices - ondown, onup
+
+    You can add you own new style for a hotspot. 'normal' is a default 
+    This work only if 'Floating POI style' is disabled.
+   -->
+
+    <spartacus_settings
+      poi_txt_audio_autorun="false"
+    />
+
+
+    <spartacus_settings
+      hotspot_poi_topano_mainstyle="waves" 
+    />
+
+    <spartacus_settings
+      vr_poi_png_name="vr_poi_hotspots_black.png"
+      poi_size="32|32"
+      poi_css_size="16"
+      poi_roundedge="16"
+      poi_panorama_roundedge="200"
+      poi_flip_color="true"
+      poi_to_pano_style="normal"
+      poi_photo_zoom="true"
+      poi_photo_max_scale_zoom="3"
+      poi_photo_min_scale_zoom="0.25"
+      default_map_width="270"
+      default_map_height="320"
+      krpano_ver_is_pr13_min="true"
+      vr_txt_width="500"
+      vr_txt_bgroundedge="6"
+      vr_txt_bgshadow="0 0 8 0x000000 1"
+      vr_txt_oversampling="2"
+
+      vr_photo_width="500"
+    
+
+      poi_panorama_color="#3f3800"
+      poi_panorama_ico="[i class='fa fa-chevron-up' aria-hidden='true'/]"
+
+      poi_info_color="#3f3800"
+      poi_info_ico="[i class='fa fa-commenting' aria-hidden='true'/]"
+
+      poi_photo_color="#3f3800"
+      poi_photo_ico="[i class='fa fa-picture-o' aria-hidden='true'/]"
+
+      poi_audio_color="#3f3800"
+      poi_audio_ico="[i class='fa fa-play' aria-hidden='true'/]"
+
+      poi_popup_color="#3f3800"
+      poi_popup_ico="[i class='fa fa-external-link-square' aria-hidden='true'/]"
+
+      poi_youtube_color="#3f3800"
+      poi_youtube_ico="[i class='fa fa-youtube-play' aria-hidden='true'/]"
+    />
+
+<!-- global GUI colors --> 
+    <spartacus_settings
+      top_z_color="0x111111"
+      bottom_z_color="0xfffeef"
+
+      change_lang_bg_color="0x222222"
+      audio2d_volume="0.1"
+      audio2d_loop="false"
+    />
+
+    <spartacus_settings
+      thumb_size_in_pixel="100"
+      poi_hide_popup_to_pano_vt="false"
+      poi_hide_popup_to_pano_normal="false"
+      poi_txt_maxwidth="430"
+      poi_txt_maxheight="500"
+      font_family_global="Roboto Condensed, sans-serif;"
+    />
+
+<!-- icons -->
+    <spartacus_settings
+      fullscreen_btn="[i class='fa fa-arrows-alt' aria-hidden='true'/]"
+      snapshot_btn="[i class='fa fa-camera' aria-hidden='true'/]"
+      vr_btn="[i class='fa fa-simplybuilt fa-rotate-180' aria-hidden='true'/]"
+      mapa_btn="[i class='fa fa-globe' aria-hidden='true'/]"
+      share_btn="[i class='fa fa-share-alt' aria-hidden='true'/]"
+      info_btn="[i class='fa fa-info' aria-hidden='true'/]"
+      floorplan_btn="[i class='fa fa-map' aria-hidden='true'/]"
+    />
+
+<!-- floorplans radar and markers -->
+    <spartacus_settings
+      fp_marker_size="16"
+      radar_dragable="true"
+      radar_size="100"
+      radar_zoomwithmap="false"
+      radar_alpha="0.5"
+      radar_fillcolor="get:structure.primary_color"
+      radar_fillalpha="1"
+      radar_linewidth="1"
+      radar_linecolor="get:spartacus_settings.top_z_color"
+      radar_linealpha="0.5"
+      fp_marker_normal_bgborder="2 0x222222 0.8"
+      />
+
+<!-- mobile settings -->
+    <spartacus_settings
+      hide_panolist_onstart="true"
+      gyro_btn="[i class='fa fa-refresh fa-rotate-90' aria-hidden='true'/]"
+	  vrmenu_php_only="false"
+    />
+
+  <!--
+  map_new_styles_list: night_mode|dark_mode|blue_mode|silver_mode|light_mode|retro_mode -> you can use all or single
+  map_new_styles_names: Night|Dark|Blue|Silver|Light|Retro -> use you own names for a new map styles (set a new names or set FALSE)
+  map_activestyle: dark_mode -> start with a new map mode (set a new style or set FALSE)
+   -->
+    <spartacus_settings
+      map_zoom="auto"
+      map_new_styles_list="dark_mode"
+      map_new_styles_names="Dark"
+      map_activestyle="dark_mode"
+      />
+
+
+
+</krpano>

@@ -1,0 +1,149 @@
+Umbrella template ver 1.6.0
+
+Download all templates for free:
+
+http://www.krpanostore.com/download.html
+
+****************************************
+
+Umbrella Template SETTINGS
+
+Icons repository:
+http://fontawesome.io/icons/
+
+
+You have change each default setting from list below. Write you new settings in the settings.xml file.
+ 
+ 
+
+Description:
+	ver 1.6.3
+	* FIX POI to pano in a mobile ver (floating poi mode only)
+	ver 1.6.0
+	* NEW animated POI to panorama possibility 
+		In this place you can set a new style for POI to the next panorama. The sample styles are in this location:
+		skin/templates/mainstyles/poi_topano_mainstyle.xml	
+		You can add you own style freely.	
+		Not all properties can be overwritten eg: scale, onclick, onhove	r, onover, onout and for mobile devices - ondown, onup
+		
+		You can add you own new style for a hotspot 'normal' is a default. 
+		This work only if 'Floating POI style' is disabled.
+	* rebuild all POI system - stability and performance improvement
+	* rebuild arrow floating POI to panorama
+
+	ver1.5.1
+	* FIX popup to pano for a 'circle' type - mobile only
+
+
+	ver1.5.0
+	* global_maxpixelzoom				NUMBER maxpixelzoom to all panoramas in the project
+	* global_fovmax						NUMBER fovmax to all panoramas in the project
+	* global_fovmin						NUMBER fovmin to all panoramas in the project 
+	
+
+	ver1.4
+	* poi_to_pano_style					popup to new scene style (normal or circle) - 'normal' is default
+	* open_panoindex_onstart			BOOL open the panoram index for the start of the project - false is default 
+	* hide_navipanel_onstart			BOOL hide the navigation panel for the start of the project - false is default 
+
+	ver1.3
+	* show_fullscreen_btn				BOOL - show/hide popup to panorama in the VR mode
+    * show_fullscreen_ico				fullscreen icon
+    * show_navi_ico						show navi component icon
+    * poi_photo_zoom 					BOOL - scroll zoom for a photo POI
+    * poi_photo_max_scale_zoom			NUMBER - max scale for zoom a photo POI
+    * poi_photo_min_scale_zoom			NUMBER - min scale for zoom a photo POI
+    * topleft_padding_y_button			NUMBER - padding for a lefttop icons
+    * krpano_ver_is_pr13_min			BOOL - if true then POI txt is apper in VR mode
+    * vr_poi_png_name					name POI graphic 
+    * vr_txt_width						NUMBER - max width for txt POI in VR mode
+    * vr_txt_bgroundedge				NUMBER - bgroundedge for txt POI in VR mode
+    * vr_txt_bgshadow					bgshadow for txt POI in VR mode
+    * vr_txt_oversampling				oversampling for txt POI in VR mode
+    * vr_photo_width					NUMBER - max width for photo POI in VR mode
+    * title_on_top_bgalpha				NUMBER - bgalpha for  a title module
+    * title_on_top_txtshadow			txtshadow for a title module
+    * title_on_css_font_size.normal		NUMBER - font size for a title module (PC and tablet)
+    * title_on_css_font_size.mobile		NUMBER - font size for a title module (mobile)
+    * category_name_tab_active			BOOL - if true then tabs open a first panorama in tab category
+    * index_bgalpha						NUMBER - bgalpha for a panorama index module
+    * index_bgroundedge					NUMBER - bgroundedge for a panorama index module
+    * index_bgshadow					bgshadow for a panorama index module
+    * index_category_tab_bgalpha		NUMBER - bgalpha for a category name in the panorama index module
+    * navi_bgalpha						NUMBER - bgalpha for a navigation module
+    * navi_bgshadow						bgshadow for a navigation module
+    * favorite_module_is_active			BOOL - if true then favorite icons are active and visible
+	
+	ver1.2
+	* poi_hide_popup_to_pano_vt:		BOOL - show/hide popup to panorama in the VR mode
+	* poi_hide_popup_to_pano_normal:	BOOL - show/hide popup to panorama in the normal mode
+	* poi_txt_maxwidth:					NUMBER - max width for the info POI (for desktop and tablet)
+	* poi_txt_maxheight:				NUMBER - max height for the info POI (for desktop and tablet)
+	* menu_open_ico: 					main menu icon 
+	* font_family_global:				global font family name (this font is set in the index.html file - head section)
+	* vr_ico:							VRmode icon
+	* index_ico: 						Index icon
+	* share_ico:						share icon
+	* autotour_ico:						autotour icon
+	* snapshot_ico:						snapshot icon
+	* gyro_ico:							gyro icon
+	* stickers_ico:						Stickers icon
+	* help_ico:							help icon
+	* navi_ico: 						navigation icon
+	* floorplans_ico: 					floorplan icon
+	* googlemaps_ico:					Googlemaps icon
+	* hide_title_on_top:				BOOL - show/hide title on top
+	* hide_tooltip:						BOOL - show/hide tooltip with scene name
+	* autotour_isset_to:				BOOL - onstart autototour is run
+	* autotour_speed_isset_to:			NUMBER - autorotate speed
+	* run_gyro_onstart: 				BOOL - onstart gyro is run
+	* mobile_logo_width: 				NUMBER (in the pixels)
+	* audio2d_volume:					NUMBER - main value of the lector audio
+	* audio2d_loop: 					BOOL - loop lector audio
+	* infobox_ico:						info popup switcher icon 	
+	* thumbs_size.no-mobile: 			NUMBER - thumb size no mobile
+	* thumbs_size.mobile:				NUMBER - thumb size mobile
+	* show_plan_ico:					floorplan icon 	
+	* show_map_ico:						map icon
+	* show_info_ico:					panorama info icon
+	* show_history_ico:					history icon
+	* show_favorite_ico:				favorite icon
+	* navi_window_width_no_mobile:		NUMBER - width of the navigation window in a pixels
+	* navi_window_height_no_mobile:		NUMBER - height of the navigation window in a pixels
+	* map_zoom: 						'auto' - shows all map markers/ZOOM NUMBER 
+	* map_new_styles_list:				!!! New map styles - night_mode|dark_mode|blue_mode|silver_mode|light_mode|retro_mode -> you can use all or single
+	* map_new_styles_names:				Night|Dark|Blue|Silver|Light|Retro -> use you own names for a new map styles (set a new names or set FALSE)
+	* map_activestyle:					rum a map with the new map style (set the new style or set FALSE)
+	* poi_size:							NUMBER - POI size - use one or two walue separated '|' eg: poi_size="45" (POI width and POI height = 45) or poi_size="45|65" (POI width=45 and POI height=65)
+	* poi_css_size:						NUMBER - POI font size 
+	* poi_roundedge:					NUMBER - roundedge POI (exept POI to new scene)
+	* poi_panorama_roundedge:			NUMBER - roundedge POI to new scene
+	* poi_flip_color:					BOOL - POI font color and POI background color switcher
+	* poi_panorama_color:				scene POI background color
+	* poi_panorama_ico:					scene POI icon
+	* poi_info_color:					info POI background color
+	* poi_info_ico:						info POI icon
+	* poi_photo_color:					photo POI background color
+	* poi_photo_ico:					photo POI icon
+	* poi_audio_color:					play audio POI background color
+	* poi_audio_ico:					play audio POI icon
+	* poi_popup_color:					www popup POI background color
+	* poi_popup_ico:					www popup POI icon
+	* poi_youtube_color:				youtube video POI background color
+	* poi_youtube_ico:					youtube video POI icon
+	* radar_dragable:					BOOL - set 'true' if you want dragable radar 
+	* radar_size:						NUMBER (in the pixels)
+	* radar_zoomwithmap:				BOOL (true/false)
+	* radar_alpha:						NUMBER (0-1)
+	* radar_fillcolor:					default 'structure.primary_color'
+	* radar_fillalpha:					NUMBER (0-1) default - 1
+	* radar_linewidth:					NUMBER (0-1) default - 1
+	* radar_linecolor:					default 'structure.poi_color'
+	* radar_linealpha:					NUMBER (0-1) default - 0.5
+	* fp_marker_size:					NUMBER - size of the floorplans marker (px)
+	* fp_marker_active_color:			a color for active marker
+	* fp_marker_normal_bgborder:		a bgborder color for no active marker
+	* fp_marker_active_bgborder:		a bgborder color for active marker
+
+		
+

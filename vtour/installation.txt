@@ -1,0 +1,20 @@
+VT Builder ver 4.2.1
+Author SPACERY WIRTUALNE www.spacerywirtualne.pl  , www.krpanostore.com
+
+INSTALLATION:
+
+https://www.youtube.com/watch?v=Z2_nDILCKWs&index=4&list=PLOE4AXLr4CPheIXvz4KqLjdg-4ZWJf39P
+
+
+1. code to replace in tour.xml file
+
+<include url="skin/vtourskin.xml"/>
+
+to
+
+<include url="skin/vtourskin.xml" if="singlepano != 0"/>
+
+2. remove action "startup"
+
+3. save changes
+

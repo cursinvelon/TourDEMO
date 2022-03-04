@@ -1,0 +1,215 @@
+<krpano>
+
+
+
+  <!-- ver 1.6.2 -->
+ <umbrella_settings
+      vertical_y_bottom_menu_open_ico="auto"
+    />
+
+
+  <umbrella_settings
+      index_padding_horizontal="40"
+      index_align="bottom"
+      index_edge="bottom"
+    />
+
+
+<!-- 
+  ver 1.6.0
+
+  In this place you can set a new style for POI to the next panorama. The sample styles are in this location:
+  skin/templates/mainstyles/poi_topano_mainstyle.xml
+  You can add you own style freely.
+  Not all properties can be overwritten eg: scale, onclick, onhover, onover, onout and for mobile devices - ondown, onup
+
+  You can add you own new style for a hotspot. 'normal' is a default 
+  This work only if 'Floating POI style' is disabled.
+ -->
+  <umbrella_settings
+      hotspot_poi_topano_mainstyle="normal" 
+    />
+
+
+<!-- ver 1.5.0 -->
+  <umbrella_settings
+      global_maxpixelzoom="2"
+      global_fovmax="70"
+      global_fovmin="111"
+    />
+
+<!-- ver 1.4 -->
+<!-- this variable defindes a default popup to pano style :: normal, circle -->
+  <umbrella_settings
+    poi_to_pano_style="normal"
+    open_panoindex_onstart="false"
+    hide_navipanel_onstart="false"
+  />
+
+
+<!-- ver 1.3 -->
+  <umbrella_settings
+    show_fullscreen_btn="true"
+    show_fullscreen_ico="[i class='fa fa-arrows-alt' aria-hidden='true'/]"
+    show_navi_ico="[i class='fa fa-map-signs' aria-hidden='true'/]"
+
+    poi_photo_zoom="true"
+    poi_photo_max_scale_zoom="3"
+    poi_photo_min_scale_zoom="0.25"
+    topleft_padding_y_button="120"
+
+    krpano_ver_is_pr13_min="true"
+
+    vr_poi_png_name="vr_poi_hotspots_black.png"
+
+    vr_txt_width="500"
+    vr_txt_bgroundedge="6"
+    vr_txt_bgshadow="0 0 8 0x000000 1"
+    vr_txt_oversampling="2"
+
+    vr_photo_width="500"
+
+    title_on_top_bgalpha="0.5"
+    title_on_top_txtshadow="0 0 2 0 0x000000 1"
+    title_on_css_font_size.normal="20"
+    title_on_css_font_size.mobile="14"
+
+    category_name_tab_active="false"
+
+    index_bgalpha="0.9"
+    index_bgroundedge="4"
+    index_bgshadow="0 -20 60 -20 0x000000 0.5"
+
+    index_category_tab_bgalpha="0.2"
+
+    navi_bgalpha="1.0"
+    navi_bgshadow="-4 0 19 -10 0x000000 1"
+
+    favorite_module_is_active="true"
+    />
+
+
+  <umbrella_settings
+    poi_hide_popup_to_pano_vt="false"
+    poi_hide_popup_to_pano_normal="false"
+    poi_txt_maxwidth="430"
+    poi_txt_maxheight="500"
+    />
+
+<!-- global -->
+  <umbrella_settings
+    menu_open_ico="[i class='fa fa-plus' aria-hidden='true'/]"
+    font_family_global="Roboto Condensed, sans-serif;"
+
+    vr_ico="[i class='fa fa-simplybuilt fa-rotate-180' aria-hidden='true'/]"
+    index_ico="[i class='fa fa-th-large' aria-hidden='true'/]"
+    share_ico="[i class='fa fa-share-alt' aria-hidden='true'/]"
+    autotour_ico="[i class='fa fa-retweet' aria-hidden='true'/]"
+    snapshot_ico="[i class='fa fa-camera' aria-hidden='true'/]"
+    gyro_ico="[i class='fa fa-refresh' aria-hidden='true'/]"
+    stickers_ico="[i class='fa fa-gamepad' aria-hidden='true'/]"
+    help_ico="[i class='fa fa-question' aria-hidden='true'/]"
+    navi_ico="[i class='fa fa-map-signs' aria-hidden='true'/]"
+
+    floorplans_ico="[i class='fa fa-map' aria-hidden='true'/]"
+    googlemaps_ico="[i class='fa fa-compass' aria-hidden='true'/]"
+
+    hide_title_on_top="false"
+    hide_tooltip="false"
+
+    autotour_isset_to="false"
+    autotour_speed_isset_to="10"
+
+    run_gyro_onstart="false"
+    mobile_logo_width="80"
+
+    audio2d_volume="0.2"
+    audio2d_loop="false"
+		/>
+
+<!-- index -->
+  <umbrella_settings
+    infobox_ico="[i class='fa fa-info' aria-hidden='true'/]"
+    thumbs_size.no-mobile="150"
+    thumbs_size.mobile="80"
+    />
+
+<!-- navi -->
+  <umbrella_settings
+    show_plan_ico="[i class='fa fa-map' aria-hidden='true'/]"
+    show_map_ico="[i class='fa fa-map-marker' aria-hidden='true'/]"
+    show_info_ico="[i class='fa fa-commenting' aria-hidden='true'/]"
+    show_history_ico="[i class='fa fa-undo' aria-hidden='true'/]"
+    show_favorite_ico="[i class='fa fa-heart' aria-hidden='true'/]"
+    navi_window_width_no_mobile="320"
+    navi_window_height_no_mobile="400"
+  />
+
+  <!--
+map_new_styles_list: night_mode|dark_mode|blue_mode|silver_mode|light_mode|retro_mode -> you can use all or single
+map_new_styles_names: Night|Dark|Blue|Silver|Light|Retro -> use you own names for a new map styles (set a new names or set FALSE)
+map_activestyle: dark_mode -> start with a new map mode (set a new style or set FALSE)
+ -->
+  <umbrella_settings
+    map_zoom="13"
+    map_new_styles_list="dark_mode|blue_mode|silver_mode|retro_mode"
+    map_new_styles_names="false"
+    map_activestyle="retro_mode"
+    />
+
+<!-- action POI --> 
+  <umbrella_settings
+    poi_size="35|30"
+    poi_css_size="18"
+    poi_roundedge="3"
+    poi_panorama_roundedge="200"
+    poi_flip_color="true"
+
+    poi_panorama_color="#251695"
+    poi_panorama_ico="[i class='fa fa-chevron-up' aria-hidden='true'/]"
+
+    poi_info_color="#660033"
+    poi_info_ico="[i class='fa fa-commenting' aria-hidden='true'/]"
+
+    poi_photo_color="#9b3700"
+    poi_photo_ico="[i class='fa fa-picture-o' aria-hidden='true'/]"
+
+    poi_audio_color="#006633"
+    poi_audio_ico="[i class='fa fa-play' aria-hidden='true'/]"
+
+    poi_popup_color="#003333"
+    poi_popup_ico="[i class='fa fa-external-link-square' aria-hidden='true'/]"
+
+    poi_youtube_color="#ea2f0f"
+    poi_youtube_ico="[i class='fa fa-youtube-play' aria-hidden='true'/]"
+    />
+
+<!-- info text POI -->
+  <umbrella_settings
+      poi_txt_maxwidth="700"
+      poi_txt_maxheight="400"
+      />
+
+<!-- radar settings -->
+  <umbrella_settings
+      radar_dragable="true"
+      radar_size="100"
+      radar_zoomwithmap="false"
+      radar_alpha="0.5"
+      radar_fillcolor="get:structure.primary_color"
+      radar_fillalpha="1"
+      radar_linewidth="1"
+      radar_linecolor="get:structure.poi_color"
+      radar_linealpha="0.5"
+      />
+
+<!-- floorplans settings -->
+  <umbrella_settings
+      fp_marker_size="16"
+      fp_marker_active_color="0xeaff00"
+      fp_marker_normal_bgborder="2 0xffffff 1"
+      fp_marker_active_bgborder="1 0x000000 1"
+      />
+
+
+</krpano>
